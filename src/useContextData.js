@@ -40,6 +40,6 @@ export const ContextProvider = ({children}) => {
 }
 
 
-export const useGlobarContext = () => {
+export const useGlobalContext = () => {
     return useContext(AppContext);
 }

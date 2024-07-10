@@ -3,20 +3,20 @@ import './App.css';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 import Hero from './Hero';
-import { useGlobarContext } from './useContextData';
+import { useGlobalContext } from './useContextData';
 
 
 function App() {
 
-  const topInformation = useGlobarContext();
+  const {message} = useGlobalContext();
 
-  console.log("topInformatoin :", topInformation);
   return (
-    <div className="App">
+    <>
+      <h1> {message}</h1>
       <Navbar />
       <Hero />
       <Sidebar />
-    </div>
+    </>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import bgImage from './images/VeniceBlue.png';
+import bgImage from './images/UltraVoilet.png';
 import { useGlobalContext } from "./useContextData";
 
 

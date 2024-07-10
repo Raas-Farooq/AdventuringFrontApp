@@ -11,11 +11,11 @@ function App() {
   const {message} = useGlobalContext();
 
   return (
-    <>
+    <div className='AppContainer'>
       <Navbar />
       <Hero />
       <Sidebar />
-    </>
+    </div>
   );
 }
 

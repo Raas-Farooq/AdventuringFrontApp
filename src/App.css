@@ -1,7 +1,86 @@
-.App {
-  text-align: center;
+.nav-header {
+  /* width:100%; */
+  display: flex;
+  justify-content: space-between;
+}
+.nav{
+  width:100vw;
+  position: relative;
+  z-index:5;
+}
+.nav-center{
+  width:100%;
+}
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:20px;
+  position: absolute;
+  top:10px;
+  right:14rem;
+  
 }
 
+.menuBtn .toggleBtn{
+  display:none;
+}
+
+@media only screen and (max-width:770px){
+  .nav-links{
+    font-size: 15px;
+  }
+
+  #link{
+    font-size: 13px;
+  }
+} 
+
+
+@media only screen and (max-width:630px){
+  .menuBtn .toggleBtn{
+    display:block;
+  }
+  .nav-links{
+    display:none;
+  }
+}
+.menuBtn{
+  margin-top:10px;
+  margin-right:5px;
+  
+}
+.signIn{
+  position: absolute;
+  top:10px;
+  right:4rem;
+}
+.layout{
+  background-image: url(images/VeniceBlue.png);
+  background-position: center;
+  background-size: cover;
+  top:0;
+  bottom:30%;
+  left:0;
+  right:0;
+  position: absolute;
+  z-index: 1;
+  opacity: 0.5;
+}
+.main-body{
+  background-image: url(images/VeniceBlue.png);
+  background-position: center;
+  background-size: cover;
+  top:0;
+  bottom:30%;
+  left:0;
+  right:0;
+  position: absolute;
+  z-index: 1;
+}
+.body-center{
+  position: absolute;
+  top:150px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

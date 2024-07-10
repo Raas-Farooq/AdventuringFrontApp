@@ -12,7 +12,6 @@ function App() {
 
   return (
     <>
-      <h1> {message}</h1>
       <Navbar />
       <Hero />
       <Sidebar />

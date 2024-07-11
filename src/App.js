@@ -4,7 +4,7 @@ import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 import Hero from './Hero';
 import { useGlobalContext } from './useContextData';
-
+import Submenu from './submenu';
 
 function App() {
 
@@ -15,6 +15,7 @@ function App() {
       <Navbar />
       <Hero />
       <Sidebar />
+      <Submenu />
     </div>
   );
 }

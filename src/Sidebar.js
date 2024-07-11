@@ -21,7 +21,7 @@ function Sidebar(){
         
         <aside className={`${isSidebarOpen ? 'show-links' : 'hideLinks'}`}>
             
-            <button className="closeBtn" onClick={closeSidebar}><FaTimes /></button>
+            <button className="closeBtn btn btn-primary" onClick={closeSidebar}> <FaTimes /></button>
             <div className="sidebar-links">
                     {dataLinks.map((data, ind) => {
                         const {page , links} = data;

@@ -1,6 +1,4 @@
-.AppContainer{
-  color:hwb(51 0% 0%)
-}.nav-header {
+.nav-header {
   /* width:100%; */
   display: flex;
   justify-content: space-between;
@@ -8,7 +6,7 @@
 .nav{
   width:100vw;
   position: relative;
-  z-index:5;
+  z-index:2;
 }
 .nav-center{
   width:100%;
@@ -23,7 +21,7 @@
   
 }
 
-.menuBtn .toggleBtn{
+.menuBtn .toggleBtn, .hideLinks{
   display:none;
 }
 
@@ -46,7 +44,7 @@
   }
   .cancelBtn{
     position: absolute;
-    z-index:11;
+    z-index:3;
     right:60px;
   }
   .show-links{
@@ -59,7 +57,7 @@
     left:10%;
     right:10%;
     bottom:30%;
-    z-index:10;
+    z-index:2;
     box-shadow: 0 2px 5px;
     background-color: white;
   }
@@ -87,6 +85,7 @@
   opacity: 0.5;
 }
 .main-body{
+  /* color:white; */
   background-image: url('./images/UltraVoilet.png');
   background-position: center;
   background-size: cover;
@@ -116,6 +115,51 @@
   text-decoration:none;
   color: black;
   margin-left:10px;
+}
+
+.closeBtn{
+  width: fit-content;
+  margin-left: auto;
+  text-align: right;
+}
+
+/* SUBMENU Styling */
+
+.submenu{
+  background: white;
+  box-shadow: 0 2px 5px;
+  position: absolute;
+  top:3rem;
+  left:40%;
+  padding:1rem;
+  transform: translate(-50%);
+  z-index: 5;
+  display:none;
+}
+.submenu::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid white;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.link{
+  text-decoration:none;
+  display: flex;
+  gap:20px
+}
+.hoverLinks{
+  display:flex;
+  gap:25px;
+}
+.submenu.show {
+  display: block;
 }
 .App-logo {
   height: 40vmin;

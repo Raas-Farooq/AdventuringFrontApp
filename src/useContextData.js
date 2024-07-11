@@ -1,15 +1,17 @@
 import React,{useState,useContext,useEffect} from 'react';
+import dataLinks from './submenuData.js';
 
 const AppContext = React.createContext();
 
 
 export const ContextProvider = ({children}) => {
-    
+    const [location, setLocation] = useState({});
     const [message, setMessage] = useState('Challenge Satan, Believe in the ONLY Almighty')
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+    const [linksCategory, setLinksCategroy] = useState({page: '', links:[]})
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
 
+    
     const openSidebar = () => {
         setIsSidebarOpen(true)
     }
@@ -18,7 +20,13 @@ export const ContextProvider = ({children}) => {
         setIsSidebarOpen(false)
     }
 
-    const openSubmenu = () => {
+    const openSubmenu = (category, coordination) => {
+        console.log("dataLinkds: ", dataLinks);
+        const linkFound = dataLinks.find(link => link.page === category);
+        
+        setLinksCategroy(linkFound)
+        setLocation(coordination);
+        console.log("linksCategory : ", linksCategory);
         setIsSubmenuOpen(true)
     }
 
@@ -34,7 +42,8 @@ export const ContextProvider = ({children}) => {
         openSubmenu,
         closeSidebar,
         closeSubmenu,
-        message,
+        location,
+        linksCategory
     }}
     > {children} </AppContext.Provider>
 }

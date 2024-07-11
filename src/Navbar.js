@@ -6,18 +6,16 @@ import './App.css';
 import WindowSize from "./windowSize";
 
 const Navbar = () => {
-    const {openSubmenu, closeSubmenu, isSubmenuOpen} = useGlobalContext()
+    const {openSidebar, closeSidebar, isSidebarOpen} = useGlobalContext()
     
     const myWindow = WindowSize();
   
-    useEffect (() => {
-       
-        if(myWindow.newWidth > 630){
-            closeSubmenu();
-            console.log("ALhamdulia")
-        }
-        
-    }, [myWindow])
+    // useEffect (() => {
+    //    if(isSidebarOpen)
+    //     {
+    //         closeSidebar();
+    //     }
+    // }, [isSidebarOpen])
 
 
     return (
@@ -27,10 +25,10 @@ const Navbar = () => {
                 <div className="nav-center">
                     <div className="nav-header">
                         <div className="logo"> <img src="coffee.png" alo="coffee" /></div>
-                        <div className="menuBtn"><button className={isSubmenuOpen ? "cancelBtn" : "toggleBtn btn btn-info"} onClick={isSubmenuOpen ? closeSubmenu : openSubmenu}> {isSubmenuOpen ? <FaTimes /> : <FaBars />}</button></div>
+                        <div className="menuBtn"><button className={"toggleBtn btn btn-info"} onClick={openSidebar}> <FaBars /></button></div>
                         
                     </div>
-                    <ul className={`nav-links ${isSubmenuOpen ? 'show-links' : 'hideLinks'}`} >
+                    <ul className={`nav-links`} >
                         <li>
                             <button id="link" className="link btn btn-primary">Services</button>
                         </li>
@@ -44,7 +42,7 @@ const Navbar = () => {
 
                     </ul>
 
-                    <button className={isSubmenuOpen ?  '' : "signIn btn btn-dark"}>SignIn</button>
+                    <button className={isSidebarOpen ?  '' : "signIn btn btn-dark"}>SignIn</button>
                 </div>
             </div>
         

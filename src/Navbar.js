@@ -64,3 +64,66 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+// Optimized Code (using two methods) adding 'Debounce'
+
+// 2 - Use a single event handler for all buttons.
+// 3 - Implement debouncing for performance.
+// 4 - Use data attributes instead of text content for identifying categories.
+// 5 - Use event delegation to handle events at a parent level, reducing the number of event listeners
+
+// import React, { useEffect, useCallback } from "react";
+// import { useGlobalContext } from "./useContextData";
+// import { FaBars } from 'react-icons/fa';
+// import debounce from 'lodash/debounce'; // Using lodash for debouncing
+
+// const Navbar = () => {
+//   const { openSubmenu, closeSubmenu, isSubmenuOpen, openSidebar, isSidebarOpen } = useGlobalContext();
+
+//   const handleSubmenu = useCallback(
+//     debounce((e) => {
+//       const target = e.target.closest('[data-category]');
+//       if (target) {
+//         const category = target.dataset.category;
+//         const rect = target.getBoundingClientRect();
+//         const centerLocation = (rect.left + rect.right) / 2;
+//         const bottom = rect.bottom;
+//         openSubmenu(category, { centerLocation, bottom });
+//       }
+//     }, 100),
+//     [openSubmenu]
+//   );
+
+//   const handleNavMouseLeave = useCallback(
+//     debounce(() => {
+//       closeSubmenu();
+//     }, 100),
+//     [closeSubmenu]
+//   );
+
+//   return (
+//     <nav className="nav" onMouseOver={handleSubmenu} onMouseLeave={handleNavMouseLeave}>
+//       {/* ... other nav content ... */}
+//       <ul className="nav-links">
+//         <li>
+//           <button data-category="services" className="my-link btn btn-primary">
+//             Services
+//           </button>
+//         </li>
+//         <li>
+//           <button data-category="projects" className="my-link btn btn-primary">
+//             Other Projects
+//           </button>
+//         </li>
+//         <li>
+//           <button data-category="tour" className="my-link btn btn-primary">
+//             Company Tour
+//           </button>
+//         </li>
+//       </ul>
+//       {/* ... other nav content ... */}
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
